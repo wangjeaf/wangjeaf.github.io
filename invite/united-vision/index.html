@@ -160,6 +160,9 @@
     			}
     		});
     		$('.intro, .story, .map, .thanks').click(function() {
+    			$('.dialog').filter(function() {
+					return $(this).css('display') != 'none';
+				}).hide();
     			var jqThis = $(this);
     			var target = $('.dialog-' + jqThis.data('dialog'));
     			var width = target.data('width') || 600;
