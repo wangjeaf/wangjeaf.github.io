@@ -95,6 +95,9 @@
 <body>
 	<!--[if lt IE 10]>
 	<div style="position:absolute;left:50%;margin-left:-280px;width:560px;top:0;background-color:white;padding:10px;border-radius:0 0 5px 5px;color:#F90;text-align:center;font-size:18px;">请使用Chrome或搜狗、360浏览器的极速模式，查看更好的页面效果</div>
+	<script type="text/javascript">
+		window.isIE = true;
+	</script>
 	<![endif]-->
 	<div class="dialog dialog-intro" data-height="350">
 		<span class="close">&times;</span>
@@ -133,7 +136,7 @@
 			<p style="text-align:right;padding-right:30px;margin-top:40px;font-size: 26px;">—— 彭湘洲&王致富</p>
 		</div>
 	</div>
-	<div class="page">
+	<div class="page none-ie" style="display: none;">
     	<div class="main"></div>
     	<div class="part point1"></div>
     	<div class="part point2"></div>
@@ -143,8 +146,68 @@
     	<div class="part intro" data-dialog="intro">邀请</div>
     	<div class="part thanks" data-dialog="thanks">致谢</div>
 	</div>
+	<style>
+		.block {
+			background-color: white;
+			margin: 60px 50px;
+		}
+		.block .title {
+			padding: 15px;
+			border-bottom: 1px solid #DDD;
+			background-color: #EEE; 
+			font-size: 26px;
+			*zoom: 1;
+		}
+		.block .content {
+			padding: 15px;
+			font-size: 22px;
+			*zoom: 1;
+			position: relative;
+		}
+	</style>
+	<div class="page for-ie" style="display: none;">
+		<div class="block">
+			<h2 class="title">盛情邀请</h2>
+			<div class="content">
+				<p class="indent">彭湘洲和王致富，特向和众视野的所有同事朋友们，发出诚挚的邀请，邀请你们参加我们两个的新婚答谢喜宴，具体信息如下：</p>
+			<p class="indent intro-item" style="padding-left:5px;margin-bottom:5px;"><strong>- 时间</strong>：2013年11月15日（星期五）晚6点</p>
+			<p class="indent intro-item" style="padding-left:5px;margin-top:5px;"><strong>- 地点</strong>：京味斋（月坛店）</p>
+			<p class="indent">彭湘洲&王致富，恭候您的光临。</p>
+				<div style="position:absolute; bottom:0; right: 10px;"><img width="160" height="160" src="./imgs/xi.jpg"/></div>
+			</div>
+		</div>
+
+		<div class="block">
+			<h2 class="title">我们两口子</h2>
+			<div class="content" style="text-align: center;">
+				<div><img src="./imgs/we.png" /></div>
+			<p style="margin-top:10px;margin-bottom:5px;"><strong>老婆</strong>：</span>彭湘洲 <span style="color: red;font-size: 18px;">&hearts;</span> <strong>老公</strong>：</span>王致富</p>
+			<p style="margin-top:5px;"><span><strong>领证日期</strong>：</span>2012-09-21 || 
+			<span><strong>结婚庆典</strong>：</span>2013-01-31 || 
+			<span><strong>答谢日期</strong>：</span>2013-11-15</p>
+			</div>
+		</div>
+		<div class="block">
+			<h2 class="title">衷心致谢</h2>
+			<div class="content">
+			<p class="indent" style="line-height: 44px; font-size: 26px;">衷心感谢和众视野科技有限公司的领导和同事们一直以来对彭湘洲的关心、帮助、支持和鼓励。</p>
+			<p style="text-align:right;padding-right:30px;margin-top:40px;font-size: 26px;">—— 彭湘洲&王致富</p>
+			</div>
+		</div>
+		<div class="block">
+			<h2 class="title">餐馆地图</h2>
+		<div class="content no-padding" style="text-align: center;">
+			<img src="./imgs/map.png" style="border: 1px solid #CCC; padding: 6px; border-radius: 4px;"/>
+		</div>
+		</div>
+	</div>
     <script type="text/javascript" src="./jquery.min.js"></script>
     <script type="text/javascript">
+    	if (window.isIE) {
+    		$('.for-ie').show();
+    	} else {
+    		$('.none-ie').show();
+    	}
     	$('.main').css('margin-top', $(window).innerHeight() / 2 - 200);
     	$(window).on('resize', function() {
     		$('.main').css('margin-top', $(window).innerHeight() / 2 - 200);
